@@ -1,12 +1,56 @@
-# React + Vite
+# 📘 React Hooks: useState y useEffect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto contiene ejemplos prácticos y explicaciones detalladas sobre el uso de los **React Hooks** `useState` y `useEffect`, dos herramientas fundamentales en el desarrollo moderno con componentes funcionales en React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 ¿Qué son los Hooks?
 
-## Expanding the ESLint configuration
+Los **Hooks** son funciones especiales que introdujo React a partir de la versión 16.8 para permitir el uso de **estado**, **ciclo de vida** y otras características de React **sin necesidad de usar clases**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Los dos hooks más comunes y utilizados son:
+
+- `useState`: permite agregar estado local a un componente funcional.
+- `useEffect`: permite manejar efectos secundarios, como llamadas a APIs, suscripciones, temporizadores, entre otros.
+
+---
+
+## 🧠 ¿Para qué sirven?
+
+### `useState`
+Sirve para **crear y manejar variables de estado** dentro de un componente funcional. Cada vez que el estado cambia, el componente se vuelve a renderizar con el nuevo valor.
+
+#### Sintaxis básica:
+```jsx
+const [estado, setEstado] = useState(valorInicial);
+
+````
+## useEffect
+Sirve para ejecutar efectos secundarios en un componente, como:
+
+Peticiones HTTP
+
+Manipulación del DOM
+
+Suscripciones
+
+Timers
+
+Sintaxis básica:
+
+useEffect(() => {
+  // Código del efecto
+
+  return () => {
+    // Código de limpieza (opcional)
+  };
+}, [dependencias]);
+
+
+🛠️ Buenas prácticas
+No llames hooks dentro de condicionales o bucles. Siempre deben estar en el nivel superior del componente.
+
+Agrupa los efectos por propósito. Si haces dos cosas diferentes (por ejemplo, una llamada a una API y un setInterval), usa dos useEffect distintos.
+
+Usa dependencias correctamente en useEffect. Si las omites, el efecto puede no comportarse como esperas.
+
